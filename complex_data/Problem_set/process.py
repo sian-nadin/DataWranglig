@@ -74,7 +74,7 @@ def process_file(f):
     # If you use the info dictionary defined here each element in the list
     # will be a reference to the same info dictionary.
     with open("{}/{}".format(datadir, f), "r") as html:
-        soup = BeautifulSoup(html)
+        soup = BeautifulSoup(html, "lxml")
         tr = soup.find_all('tr',{'class':'dataTDRight'})
         for r in tr:
             td = r.find_all('td')
